@@ -10,7 +10,11 @@ $faqs = [
   ],
   [
     'question' => "Perché il mio account è associato a un paese?",
-    'answer' => "<p>Il tuo account è associato a un paese (o territorio) nei Termini di servizio per poter stabilire due cose:</p><ol><li>La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti:</li><ol><li>Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo (paesi dell'Unione europea, oltre a Islanda, Liechtenstein e Norvegia) o in Svizzera.</li><li>Google LLC, con sede negli Stati Uniti, per il resto del mondo.</li></ol><li>La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali.</li></ol><p>Tieni presente che i servizi Google sono fondamentalmente gli stessi a prescindere dalla società consociata che li offre o dal paese a cui è associato il tuo account.<p><h4>Stabilire il paese associato al tuo account</h4><p>Quando crei un nuovo Account Google, lo associamo a un paese in base a dove è stato creato. Per quanto riguarda gli account creati almeno un anno fa, usiamo il paese da cui accedi solitamente ai servizi Google, in genere i servizi in cui hai trascorso più tempo nell'ultimo anno.</p><p>I viaggi frequenti solitamente non influiscono sul paese associato al tuo account. Se ti trasferisci in un altro paese, potrebbe occorrere circa un anno per aggiornare l'associazione del paese.</p><p>Se il paese associato al tuo account non corrisponde al tuo paese di residenza, il motivo potrebbe essere la differenza tra il paese in cui lavori e il paese in cui risiedi, l'installazione di una rete privata virtuale (VPN) per mascherare il tuo indirizzo IP oppure la residenza vicino a un confine territoriale. Contattaci se ritieni che il paese associato al tuo account sia sbagliato.</p>",
+    'answer' => "<p>Il tuo account è associato a un paese (o territorio) nei Termini di servizio per poter stabilire due cose:</p><ol><li>La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti:<ol>
+      <li>Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo (paesi dell'Unione europea,
+        oltre a Islanda, Liechtenstein e Norvegia) o in Svizzera.</li>
+      <li>Google LLC, con sede negli Stati Uniti, per il resto del mondo.</li>
+    </ol></li><li>La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali.</li></ol><p>Tieni presente che i servizi Google sono fondamentalmente gli stessi a prescindere dalla società consociata che li offre o dal paese a cui è associato il tuo account.<p><h4>Stabilire il paese associato al tuo account</h4><p>Quando crei un nuovo Account Google, lo associamo a un paese in base a dove è stato creato. Per quanto riguarda gli account creati almeno un anno fa, usiamo il paese da cui accedi solitamente ai servizi Google, in genere i servizi in cui hai trascorso più tempo nell'ultimo anno.</p><p>I viaggi frequenti solitamente non influiscono sul paese associato al tuo account. Se ti trasferisci in un altro paese, potrebbe occorrere circa un anno per aggiornare l'associazione del paese.</p><p>Se il paese associato al tuo account non corrisponde al tuo paese di residenza, il motivo potrebbe essere la differenza tra il paese in cui lavori e il paese in cui risiedi, l'installazione di una rete privata virtuale (VPN) per mascherare il tuo indirizzo IP oppure la residenza vicino a un confine territoriale. Contattaci se ritieni che il paese associato al tuo account sia sbagliato.</p>",
   ],
   [
     'question' => "Come faccio a rimuovere informazioni su di me dai risultati di ricerca di Google?",
@@ -31,24 +35,37 @@ $faqs = [
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
   <title>Google Faq</title>
 </head>
 
 
 <body>
+  <header>
+    <nav>
+      <a class="nav__link" href="#">Introduzione</a>
+      <a class="nav__link" href="#">Norme sulla privacy</a>
+      <a class="nav__link" href="#">Termini di utilizzo</a>
+      <a class="nav__link" href="#">Tecnologie</a>
+      <a class="nav__link active" href="#">Domande frequenti</a>
+    </nav>
+  </header>
 
+  <div class="container">
   <?php
 foreach ($faqs as $faq) { ?>
 
-<div>
+<div class="faq">
   <h3>
     <?= $faq['question']; ?>
   </h3>
-</div>
 
-<?= $faq['answer'];
+  <?= $faq['answer']; ?>
+</div>
+<?php
 }
 ?>
-
+</div>
 </body>
+
 </html>
